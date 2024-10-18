@@ -5,13 +5,23 @@
         <meta name="viewport">
         <title>Réservation</title>
         <link rel="stylesheet" href="./styles/reserver.css">
+        <script>
+            function checkForm() {
+                const date = document.getElementById('date').value;
+                const time = document.getElementById('time').value;
+                
+                if (date === '' || time === '') {
+                    alert("Veuillez sélectionner une date et une heure pour la réservation.");
+                    return false;  // Empêche la soumission du formulaire
+                }
+                return true;  // Autorise la soumission du formulaire
+            }
+        </script>
     </head>
 <!-- je vais faire la page de réservation ne vous inquiétez pas c'est temporaire cette page -->
     <body>
         <header>
-
             <div id="logo">Logo</div>
-
             <div id="information">
                      <a href="">Qui sommes-nous ?</a>
                      <a href="">Contact</a>
@@ -19,24 +29,31 @@
                      <button onclick="">Trouver un local</button>
             </div>
         </header>
-
+        
         <main>
-            <h2> Veuillez vous connecter avant d'effectuer la réservation, au risque que celle-ci ne soit pas prise en compte. </h2>
+            <h2>Veuillez vous connecter avant d'effectuer la réservation, au risque que celle-ci ne soit pas prise en compte.</h2>
             <label for="date">A quelle date souhaitez-vous réserver la salle ?</label>
-
             <div id="date_resa">
-            <input type="date" id="date" name="date" required> </div>
+                <input type="date" id="date" name="date" required>
+            </div>
+
+            <div id="heure_resa">
+                <label for="time">Choisissez une heure pour la réservation de votre local :</label>
+                <input type="time" id="time" name="time" required>
+            </div>
 
             <label for="info">Si vous souhaitez nous partager des informations complémentaires
             </br> quand à votre réservation, vous pouvez le faire ci-dessous :
             </br> (ex : agencement de la salle, décorations, etc.)
             </label>
             <div id="informations_supplementaires">
-            <textarea id="info" name="info" rows="4" cols="50"></textarea> </div>
+                <textarea id="info" name="info" rows="4" cols="50"></textarea>
+            </div>
 
-
-            <input type="submit" value="Réserver">
-
+            <!-- Ajout de l'attribut action pour redirection -->
+            <form action="confirmation.html" onsubmit="return checkForm();">
+                <input type="submit" id="reserveButton" value="Réserver">
+            </form>
         </main>
 
         <footer>
@@ -50,19 +67,17 @@
 
             <div id="trait"></div>
 
-       
-        <div id="legalite">
-            <div id="mention">
-                <p>2024 [Nom du Site] Tous droits réservés</p>
-            </div>
+            <div id="legalite">
+                <div id="mention">
+                    <p>2024 [Nom du Site] Tous droits réservés</p>
+                </div>
 
-            <div id="information_légales">
-                <a href="">Mentions légales</a>
-                <a href="">Données Personnelles</a>
-                <a href="">Conditions générales d'utilisation</a>
+                <div id="information_légales">
+                    <a href="">Mentions légales</a>
+                    <a href="">Données Personnelles</a>
+                    <a href="">Conditions générales d'utilisation</a>
+                </div>
             </div>
-        </div>
-
         </footer>
     </body>
 </html>
