@@ -23,7 +23,17 @@
         <main>
             <h2> Veuillez vous connecter avant d'effectuer la réservation, au risque que celle-ci ne soit pas prise en compte. </h2>
             <label for="date">A quelle date souhaitez-vous réserver la salle ?</label>
-            <input type="date" id="date" name="date" required>
+
+            <div id="date_resa">
+            <input type="date" id="date" name="date" required> </div>
+
+            <label for="info">Si vous souhaitez nous partager des informations complémentaires
+            </br> quand à votre réservation, vous pouvez le faire ci-dessous :
+            </br> (ex : agencement de la salle, décorations, etc.)
+            </label>
+            <div id="informations_supplementaires">
+            <textarea id="info" name="info" rows="4" cols="50"></textarea> </div>
+
 
             <input type="submit" value="Réserver">
 

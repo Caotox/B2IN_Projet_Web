@@ -170,3 +170,22 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background-color: #45a049;
 }
+
+#date_resa{
+    color: blue;
+    border: 2px;
+    border-color:#2932E3;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+#informations_supplementaires{
+    color: blue;
+    background-color:purple;
+    border: 2px;
+    border-color:#2932E3;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
