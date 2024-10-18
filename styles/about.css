@@ -1,0 +1,192 @@
+*{
+    min-width: 5rem;
+}
+
+body{
+    margin: 0;
+    width: 100%;
+}
+
+header{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: white;
+    justify-content: space-around;
+    align-items: center;
+    width: 1440px;
+    height: 90px;
+}
+
+button{
+    background-color: #2932E3;
+    color: white;
+    border-radius: 0.5rem;
+    width: 6rem;
+}
+
+.button{
+    display: flex;
+    background-color: #2932E3;
+    color: white;
+    border-radius: 0.5rem;
+    width: 10rem;
+    height: 2rem;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+}
+
+button:hover{
+    background-color: grey;
+}
+
+.button:hover{
+    background-color: grey;
+}
+
+#information{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    gap: 20px;
+}
+
+#information a {
+    text-decoration: none;
+    color: black;
+}
+
+#information a:hover{
+    background-color: rgba(128, 128, 128, 0.5);
+    border-radius: 20%;
+}
+#local{
+    background-color: #2932E3;
+    border-radius: 20%;
+    color: white;
+}
+
+
+main{
+    display: flex;
+    flex-direction: column;
+    background-color: #B8DDFF;
+    padding: 9rem;
+    align-items: center;
+    height: 130rem;
+    gap: 2rem;
+}
+
+#us{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.image{
+    display: flex;
+    width: auto;
+    height: 30%;
+    border-radius:5%;
+}
+
+
+
+#histoire{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#equipe{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    padding: 2rem;
+    width: 100%;
+    border-radius: 2rem;
+}
+
+#contact a{
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    background-color: #2932E3;
+    display: inline-block;
+    font-size: 1rem;
+    margin: 4px 2px;
+    border-radius: 2px;
+}
+
+#contact a:hover{
+    background-color: grey;
+}
+
+.button{
+    border-radius: 2rem;
+    text-align: center;
+    color: white;
+}
+
+footer{
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    background-color: white;
+    min-height: 6rem;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+#fin{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center; 
+    gap: 20px;
+}
+
+#fin a{
+text-decoration: none;
+color: black;
+}
+
+#fin a:hover{
+background-color: rgba(128, 128, 128, 0.5);
+border-radius: 20%;
+}
+
+
+#trait{
+border-bottom: 1px solid ;
+border-bottom-color: black;
+width: 60%
+}
+
+#légalité{
+display: flex;
+flex-wrap: wrap;
+flex-direction: row;
+align-items: center;
+justify-content: space-around;
+width: 100%;
+}
+#information_légales a{
+text-decoration: none;
+color: black;
+}
+
+#information_légales a:hover{
+background-color: rgba(128, 128, 128, 0.5);
+border-radius: 20%;
+}

@@ -1,0 +1,179 @@
+*{
+    min-width: 5rem;
+}
+
+body{
+    margin: 0;
+    width: 100%;
+}
+
+header{
+    display: flex;
+    background-color: white;
+    justify-content: space-around;
+    align-items: center;
+    width: 1440px;
+    height: 90px;
+}
+
+button{
+    background-color: #2932E3;
+    color: white;
+    border-radius: 0.5rem;
+    width: 6rem;
+}
+
+.button{
+    display: flex;
+    background-color: #2932E3;
+    color: white;
+    border-radius: 0.5rem;
+    width: 10rem;
+    height: 2rem;
+    text-decoration: none;
+    text-align: center;
+    justify-content: center;
+}
+
+button:hover{
+    background-color: grey;
+}
+
+.button:hover{
+    background-color: grey;
+}
+
+#information{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+#information a {
+    text-decoration: none;
+    color: black;
+}
+
+#information a:hover{
+    background-color: rgba(128, 128, 128, 0.5);
+    border-radius: 20%;
+}
+
+main{
+    display: flex;
+    flex-direction: row;
+    background-color: #B8DDFF;
+    justify-content: center;
+    align-items: center;
+    height: 50rem;
+    gap: 2rem;
+}
+img{
+    height: 25rem;
+    width: 30rem;
+}
+
+#contact{
+    display: flex;
+    justify-content: space-around;
+}
+
+#text p{
+    line-height: 1.0;
+    text-align: center;
+}
+#text h1{
+    text-align: center;
+}
+
+#formulaire{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 40px;
+    width: 20rem;
+    border: 1px black solid;
+    border-radius: 0.5rem;
+    background-size: cover;
+    height: 2rem;
+}
+
+ form input{
+    height: 2rem;
+    top: 0.5rem;
+    justify-content: center;
+ }
+
+ textarea{
+    border: 1px black solid;
+    border-radius: 0.5rem;
+    height: 5rem;
+ }
+
+footer{
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    background-color: white;
+    min-height: 6rem;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+
+#fin{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center; 
+    gap: 20px;
+}
+
+#fin a{
+text-decoration: none;
+color: black;
+}
+
+#fin a:hover{
+background-color: rgba(128, 128, 128, 0.5);
+border-radius: 20%;
+}
+
+
+#trait{
+border-bottom: 1px solid ;
+border-bottom-color: black;
+width: 60%
+}
+
+#legalite{
+display: flex;
+flex-wrap: wrap;
+flex-direction: row;
+align-items: center;
+justify-content: space-around;
+width: 100%;
+}
+
+#information_légales{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    gap: 20px;
+}
+#information_légales a{
+text-decoration: none;
+color: black;
+}
+
+#information_légales a:hover{
+background-color: rgba(128, 128, 128, 0.5);
+border-radius: 20%;
+}
