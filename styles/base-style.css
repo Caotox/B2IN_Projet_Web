@@ -1,0 +1,124 @@
+body{
+    margin: 0;
+}
+
+#navbar-logo{
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 1.5rem;
+}
+
+#navbar{
+    display: flex;
+    background-color: white;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+    padding-left: 4rem;
+    padding-right: 4rem;
+}
+
+#navlinks{
+    display: flex;
+    column-gap: 2rem;
+    align-items: center;
+}
+
+/*<uniquifier>: Use a unique and descriptive class name*/
+/* <weight>: Use a value from 300 to 800*/
+
+.navlink {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  /*font-variation-settings: "wdth" 100;*/
+  text-decoration: none;
+  font-size: 1rem;
+  color: black;
+  line-height: 130%;
+}
+
+#navlink-button{
+   /* -webkit-appearance: none;*/
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    color: white;
+    background-color: #264D80;
+    border-radius: 1.563rem;
+    text-decoration: none;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    /*font-variation-settings: "wdth" 100;*/
+    line-height: 130%;
+}
+
+#footer-section{
+    display: flex;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    flex-direction: column;
+    row-gap: 2.5rem;
+    padding-top: 3.25rem;
+    padding-bottom: 3.25rem;
+}
+
+#footer-nav-links{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    column-gap: 2rem;
+}
+
+.footer-nav-link{
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    /*font-variation-settings: "wdth" 100;*/
+    text-decoration: none;
+    font-size: 0.833rem;
+    color: black;
+    line-height: 130%;
+}
+
+#footer-legal{
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid black;
+    padding-top: 2rem;
+}
+
+#footer-legal-text{
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    /*font-variation-settings: "wdth" 100;*/
+    font-size: 0.833rem;
+    color: black;
+    line-height: 130%;
+}
+
+#footer-legal-links{
+    display: flex;
+    column-gap: 1.5rem;
+}
+
+.footer-legal-link{
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    /*font-variation-settings: "wdth" 100;*/
+    text-decoration: none;
+    font-size: 0.833rem;
+    color: black;
+    line-height: 130%;
+}

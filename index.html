@@ -3,86 +3,144 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport">
-        <title>Home</title>
-        <link rel="stylesheet" href="./styles/main.css">
+        <title>Accueil</title>
+
+        <link rel="stylesheet" href="./styles/index-style.css">
+        <link rel="stylesheet" href="./styles/base-style.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Zen+Antique&display=swap" rel="stylesheet">
+
     </head>
 
     <body>
         <header>
-            <div id="logo">Logo</div>
+            <div id="navbar">
 
-            <div id="information">
-                     <a href="">Qui sommes-nous ?</a>
-                     <a href="">Contact</a>
-                     <a href="">Connexion</a>
-                     <button onclick="">Trouver un local</button>
+                <div id="navbar-logo">
+                    Logo
+                </div>
+
+                <div id="navlinks">
+                        <a class="navlink" href="">Qui sommes-nous</a>
+                        <a class="navlink" href="">Contact</a>
+                        <a class="navlink" href="">Connexion</a>
+                        <a id="navlink-button" href="">Trouver un local</a>
+                </div>
+
             </div>
         </header>
 
         <main>
-                <article>
-                    <section>
-                        <img src="./images/seminaire1.jpg" alt="Première salle de séminaire">
-                    </section>
 
-                    <section class="annonces">
-                        <h1>Paris</h1>
-                        <p>35 Rue des Tulipes, 75008, Paris </p>
-                        <p>450€ / heure</p>
-                        <a class="button" href="./reserver.html">Réserver</a>
-                    </section>
-                </article>
+            <div id="main-section">
+
+                <div id="main-section-part-1">
+
+                    <div id="part-1-text-section">
+
+                        <h1>Explorer les locaux</h1>
+                        <p>Sélectionnez vos critères et parcourez nos locaux disponibles.</p>
+
+                    </div>
+                    
+                    <form action="exemple.php" method="POST" id="part-1-selects-section">
+
+                        <select name="city" id="city-select" class="local-select">
+                            <option value="paris">Paris</option>
+                            <option value="lyon">Lyon</option>
+                        </select>
+
+                        <select name="space" id="space-select" class="local-select">
+                            <option value="outdoor">Espace extérieur</option>
+                            <option value="interior">Espace intérieur</option>
+                        </select>
+
+                        <select name="capacity" id="capacity-select" class="local-select">
+                            <option value="100p">Pour 100 personnes</option>
+                            <option value="200p">Pour 200 personnes</option>
+                        </select>
+
+                        <input type="submit" value="Appliquer" id="selects-button">
                         
-                <article>
-                    <section class="photo">
-                        <img src="./images/seminaire2.jpg" alt="Deuxième salle de séminaire">
-                    </section>
+                    </form>
 
-                    <section class="annonces">
-                        <h1>Lyon</h1>
-                        <p>32 Rue des petits marchands, 69003, Lyon  </p>
-                        <p>775€ / heure</p>
-                        <a class="button" href="./reserver.html">Réserver</a>
-                    </section>
-                </article>
+                </div>
 
-                <article>
-                    <section>
-                        <img src="./images/seminaire3.jpg" alt="Troisième salle de Séminaire">
-                    </section>
+                <div id="main-section-part-2">
 
-                    <section class="annonces">
-                        <h1>Orléans</h1>
-                        <p> 06 Rue d'Issoudun, 45100, Orléans </p>
-                        <p>450€ / heure</p>
-                        <a class="button" href="./reserver.html">Réserver</a>
-                    </section>
-                </article>
+                    <div class="local-block">
+
+                        <img src="./images/local-image-1.webp" alt="Première salle de séminaire" class="local-img">
+
+                        <form action="exemple.php" method="POST" class="info-local">
+                            <div class="info-local-text">
+                                <h2>Paris</h2>
+                                <p>35 Rue des Tulipes, 75008, Paris</p>
+                                <p>450€ / heure</p>
+                            </div>
+                            <input type="submit" value="Réserver" class="book-button">
+                        </form>
+                    </div>
+
+                    <div class="local-block">
+
+                        <img src="./images/local-image-2.webp" alt="Première salle de séminaire" class="local-img">
+
+                        <form action="exemple.php" method="POST" class="info-local">
+                            <div class="info-local-text">
+                                <h2>Lyon</h2>
+                                <p>35 rue des coquelicots, 69003, Lyon</p>
+                                <p>680€ / h</p>
+                            </div>
+                            <input type="submit" value="Réserver" class="book-button">
+                        </form>
+                    </div>
+
+                    <div class="local-block">
+
+                        <img src="./images/local-image-3.webp" alt="Première salle de séminaire" class="local-img">
+
+                        <form action="exemple.php" method="POST" class="info-local">
+                            <div class="info-local-text">
+                                <h2>Nantes</h2>
+                                <p>35 rue des sapins, 44036, Nantes</p>
+                                <p>760€ / h</p>
+                            </div>
+                            <input type="submit" value="Réserver" class="book-button">
+                        </form>
+                    </div>
+                            
+                </div>
+
+            </div>
         </main>
 
         <footer>
-            <div id="fin">
-                <a href="">Contact</a>
-                <a href="">Qui sommes-nous</a>
-                <a href="">Trouver un local</a>
-                <a href="">Connexion</a>
-                <a href="">Inscription</a>
-            </div>
+            <div id="footer-section">
 
-            <div id="trait"></div>
+                <div id="footer-nav-links">
+                    <a href="" class="footer-nav-link">Contact</a>
+                    <a href="" class="footer-nav-link">Qui sommes-nous</a>
+                    <a href="" class="footer-nav-link">Trouver un local</a>
+                    <a href="" class="footer-nav-link">Connexion</a>
+                    <a href="" class="footer-nav-link">Inscription</a>
+                </div>
 
-       
-        <div id="legalite">
-            <div id="mention">
-                <p>2024 [Nom du Site] Tous droits réservés</p>
-            </div>
+                <div id="footer-legal">
+                    <p id="footer-legal-text">2024 [Nom du Site] Tous droits réservés</p>
 
-            <div id="information_légales">
-                <a href="">Mentions légales</a>
-                <a href="">Données Personnelles</a>
-                <a href="">Conditions générales d'utilisation</a>
+                    <div id="footer-legal-links">
+                        <a href="" class="footer-legal-link">Mentions légales</a>
+                        <a href="" class="footer-legal-link">Politique de confidentialité</a>
+                        <a href="" class="footer-legal-link">Conditions générales de vente</a>
+                    </div>
+
+                </div>
+
+
             </div>
-        </div>
 
         </footer>
     </body>
