@@ -9,6 +9,7 @@
 <!-- je vais faire la page de réservation ne vous inquiétez pas c'est temporaire cette page -->
     <body>
         <header>
+
             <div id="logo">Logo</div>
 
             <div id="information">
@@ -20,44 +21,22 @@
         </header>
 
         <main>
-                <article>
-                    <section>
-                        <img src="./images/seminaire1.jpg" alt="Première salle de séminaire">
-                    </section>
+            <h2> Veuillez vous connecter avant d'effectuer la réservation, au risque que celle-ci ne soit pas prise en compte. </h2>
+            <label for="date">A quelle date souhaitez-vous réserver la salle ?</label>
 
-                    <section class="annonces">
-                        <h1>Paris</h1>
-                        <p>35 Rue des Tulipes, 75008, Paris </p>
-                        <p>450€ / heure</p>
-                        <a class="button" href="">Réserver</a>
-                    </section>
-                </article>
-                        
-                <article>
-                    <section class="photo">
-                        <img src="./images/seminaire2.jpg" alt="Deuxième salle de séminaire">
-                    </section>
+            <div id="date_resa">
+            <input type="date" id="date" name="date" required> </div>
 
-                    <section class="annonces">
-                        <h1>Lyon</h1>
-                        <p>32 Rue des petits marchands, 69003, Lyon  </p>
-                        <p>775€ / heure</p>
-                        <a class="button" href="">Réserver</a>
-                    </section>
-                </article>
+            <label for="info">Si vous souhaitez nous partager des informations complémentaires
+            </br> quand à votre réservation, vous pouvez le faire ci-dessous :
+            </br> (ex : agencement de la salle, décorations, etc.)
+            </label>
+            <div id="informations_supplementaires">
+            <textarea id="info" name="info" rows="4" cols="50"></textarea> </div>
 
-                <article>
-                    <section>
-                        <img src="./images/seminaire3.jpg" alt="Troisième salle de Séminaire">
-                    </section>
 
-                    <section class="annonces">
-                        <h1>Orléans</h1>
-                        <p> 06 Rue d'Issoudun, 45100, Orléans </p>
-                        <p>450€ / heure</p>
-                        <a class="button" href="">Réserver</a>
-                    </section>
-                </article>
+            <input type="submit" value="Réserver">
+
         </main>
 
         <footer>
