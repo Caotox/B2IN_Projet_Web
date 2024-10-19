@@ -101,5 +101,5 @@ app.post('/api/reservation', async (req, res) => {
 // Démarrage du serveur
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+  console.log(`Serveur : ${PORT}`);
 });
