@@ -14,7 +14,62 @@
     </script>
 </head>
 <script>
-    // Faire le script de connexion ici
+    // Connexion
+document.getElementById('connexion-form').addEventListener('submit', async function(event) {
+    event.preventDefault();
+    const email = document.getElementById('email-connexion').value;
+    const password = document.getElementById('password-connexion').value;
+
+    // Envoi des données à l'API
+    const response = await fetch('/api/connexion', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            adresse_mail: email,
+            mot_de_passe: password
+        })
+    });
+
+    const data = await response.json();
+    if (response.ok) {
+        alert('Connexion réussie');
+    } else {
+        alert(data.message || 'Erreur : Identifiants incorrects');
+    }
+});
+
+// Inscription
+document.getElementById('inscription-form').addEventListener('submit', async function(event) {
+    event.preventDefault();
+    const prenom = document.getElementById('prenom-inscription').value;
+    const nom = document.getElementById('nom-inscription').value;
+    const email = document.getElementById('email-inscription').value;
+    const password = document.getElementById('password-inscription').value;
+
+    // Envoi des données à l'API
+    const response = await fetch('/api/inscription', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            prenom: prenom,
+            nom: nom,
+            adresse_mail: email,
+            mot_de_passe: password
+        })
+    });
+
+    const data = await response.json();
+    if (response.ok) {
+        alert('Inscription réussie');
+    } else {
+        alert(data.message || 'Erreur : cet email est déjà utilisé');
+    }
+});
+
 </script>
 <body>
     <header>
@@ -45,9 +100,9 @@
 
                 </div>
                     <label for="email">Adresse e-mail</label>
-                    <input type="text" id="email-input">
+                    <input type="text" id="email-connexion">
                     <label for="password">Mot de passe</label>
-                    <input type="password"id="password-input">
+                    <input type="password"id="password-connexion">
                     <button type="submit">Connexion</button>
 
                 </form>
@@ -63,13 +118,13 @@
 
                 </div>
                 <label for="prenom">Prénom</label>
-                <input type="text" id="prenom_input">
+                <input type="text" id="prenom-inscription">
                 <label for="nom">Nom</label>
-                <input type="text" id="nom_input">
+                <input type="text" id="nom-inscription">
                 <label for="email">Adresse e-mail</label>
-                <input type="text" id="email-input">
+                <input type="text" id="email-inscription">
                 <label for="password">Mot de passe</label>
-                <input type="password" id="password-input">
+                <input type="password" id="password-inscription">
                 <button type="submit">Inscription</button>
 
             </div>
