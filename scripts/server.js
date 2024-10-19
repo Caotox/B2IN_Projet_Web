@@ -2,13 +2,13 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const { Pool } = require('pg');
-const bcrypt = require('bcrypt'); // Pour le hachage des mots de passe
+const bcrypt = require('bcrypt'); 
 
 const app = express();
 const port = 3000;
 
-app.use(cors());
-app.use(bodyParser.json());
+app.use(cors()); 
+app.use(bodyParser.json()); 
 
 const pool = new Pool({
   user: 'postgres',
