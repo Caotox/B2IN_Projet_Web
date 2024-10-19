@@ -12,8 +12,6 @@ const pool = new Pool({
     port: 5432,                        
   });
   
-
-// Middleware pour lire les données JSON
 app.use(express.json());
 
 app.post('/api/inscription', async (req, res) => {
@@ -30,7 +28,7 @@ app.post('/api/inscription', async (req, res) => {
 
     const hashedPassword = await bcrypt.hash(mot_de_passe, 10);
 
-    // Insertion du nouvel utilisateur
+    // Insertion d'un nouvel utilisateur (méthode POST)
     const insertUserQuery = `
       INSERT INTO users (prenom, nom, adresse_mail, mot_de_passe)
       VALUES ($1, $2, $3, $4) RETURNING *`;
@@ -46,7 +44,7 @@ app.post('/api/connexion', async (req, res) => {
     const { adresse_mail, mot_de_passe } = req.body;
   
     try {
-      // Vérifier si l'email existe dans la base de données
+      // Vérification de l'email dans la BDD
       const userQuery = 'SELECT * FROM users WHERE adresse_mail = $1';
       const user = await pool.query(userQuery, [adresse_mail]);
   
@@ -54,7 +52,7 @@ app.post('/api/connexion', async (req, res) => {
         return res.status(400).json({ success: false, message: 'Identifiants incorrects' });
       }
   
-      // Vérifier si le mot de passe correspond
+      // Vérification du mdp dans la BDD
       const validPassword = await bcrypt.compare(mot_de_passe, user.rows[0].mot_de_passe);
   
       if (!validPassword) {
@@ -68,7 +66,7 @@ app.post('/api/connexion', async (req, res) => {
     }
   });
 
-// Route pour récupérer toutes les salles
+// Récupération des salles (GET)
 app.get('/api/salles', async (req, res) => {
   try {
     const sallesQuery = 'SELECT * FROM salles';
@@ -80,16 +78,16 @@ app.get('/api/salles', async (req, res) => {
   }
 });
 
-// Route pour réserver une salle
+// Reservation d'une salle puis suppression (POST pour envoyer l'information de la salle, puis suppression de la salle)
 app.post('/api/reservation', async (req, res) => {
-  const { email, salle_id, date, heure } = req.body; 
+  const { ville, adresse, prix, nb_personnes, type_espace } = req.body; 
 
   try {
     const insertReservationQuery = `
-      INSERT INTO reservations (email, salle_id, date, heure)
-      VALUES ($1, $2, $3, $4) RETURNING *`;
+      INSERT INTO reservations (ville, adresse, prix, nb_personnes, type_espace)
+      VALUES ($1, $2, $3, $4, $5) RETURNING *`;
       
-    const newReservation = await pool.query(insertReservationQuery, [email, salle_id, date, heure]);
+    const newReservation = await pool.query(insertReservationQuery, [ville, adresse, prix, nb_personnes, type_espace]);
 
     res.status(201).json({ success: true, message: 'Réservation réussie', reservation: newReservation.rows[0] });
   } catch (error) {
