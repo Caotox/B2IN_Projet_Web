@@ -1,6 +1,6 @@
 // Importation des modules nécessaires
 const express = require('express');
-const bcrypt = require('bcrypt');  // Pour le hachage des mots de passe
+// const bcrypt = require('bcrypt');  // Pour le hachage des mots de passe
 const { Pool } = require('pg');    // Client PostgreSQL
 
 const app = express();
@@ -26,7 +26,8 @@ app.post('/api/inscription', async (req, res) => {
       return res.status(400).json({ success: false, message: 'Email déjà utilisé' });
     }
 
-    const hashedPassword = await bcrypt.hash(mot_de_passe, 10);
+    // const hashedPassword = await bcrypt.hash(mot_de_passe, 10);
+    const hashedPassword = await mot_de_passe;
 
     // Insertion d'un nouvel utilisateur (méthode POST)
     const insertUserQuery = `
@@ -53,7 +54,7 @@ app.post('/api/connexion', async (req, res) => {
       }
   
       // Vérification du mdp dans la BDD
-      const validPassword = await bcrypt.compare(mot_de_passe, user.rows[0].mot_de_passe);
+      const validPassword = (mot_de_passe === user.rows[0].mot_de_passe);
   
       if (!validPassword) {
         return res.status(400).json({ success: false, message: 'Identifiants incorrects' });
