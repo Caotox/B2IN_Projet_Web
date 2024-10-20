@@ -1,0 +1,27 @@
+nginx server { listen 80; server_name _;
+
+location /monSite { alias /var/www/monSite; index index.html; }
+
+    location /api/ {
+        proxy_pass http://localhost:3000/;  # Redirige vers ton serveur Node.js
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+}
+# Instructions : installer node.js, nginx, express et pg (regarder sur internet si vous ne savez pas faire)
+# Ensuite : Ouvrez le fichier /etc/nginx/nginx.conf.
+# Dans la section html, ajouter la ligne : nginx include /etc/nginx/sites-available/monSite;
+# Commenter la ligne qui inclut sites-enabled en ajoutant un # devant : nginx # include /etc/nginx/sites-enabled/*;
+
+# Ensuite : Accéder au dossier /etc/nginx/sites-available.
+# Créer un fichier nommé monSite avec le contenu suivant --> CE FICHIER
+
+# Placer les fichiers HTML et CSS (comme index.html) dans le dossier /var/www/monSite.
+
+# Ensuite : faire bash sudo systemctl restart nginx
+# Ensuite : faire node server.js (serveur démarré)
+# Ensuite : chercher la page : localhost:3000/index.html (ou autre, cherchez le bon)
+# Ensuite, tester avec postman 
