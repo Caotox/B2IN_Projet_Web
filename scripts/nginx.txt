@@ -1,13 +1,6 @@
-server {
-    listen 80;
-    server_name localhost;  # Remplacer par ton domaine si tu en as un
+nginx server { listen 80; server_name _;
 
-    root /home/debian/Documents/B2IN_Projet_Web/;  # Remplacer par le chemin de ton site
-    index index.html;
-
-    location / {
-        try_files $uri $uri/ =404;
-    }
+location /monSite { alias /var/www/monSite; index index.html; }
 
     location /api/ {
         proxy_pass http://localhost:3000/;  # Redirige vers ton serveur Node.js
