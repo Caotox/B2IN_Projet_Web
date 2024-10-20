@@ -13,7 +13,7 @@ location /monSite { alias /var/www/monSite; index index.html; }
 }
 # Instructions : installer node.js, nginx, express et pg (regarder sur internet si vous ne savez pas faire)
 # Ensuite : Ouvrez le fichier /etc/nginx/nginx.conf.
-# Dans la section html, ajouter la ligne : nginx include /etc/nginx/sites-available/monSite;
+# Dans la section http, ajouter la ligne : nginx include /etc/nginx/sites-available/monSite;
 # Commenter la ligne qui inclut sites-enabled en ajoutant un # devant : nginx # include /etc/nginx/sites-enabled/*;
 
 # Ensuite : Accéder au dossier /etc/nginx/sites-available.
