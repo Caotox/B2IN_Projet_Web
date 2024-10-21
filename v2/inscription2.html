@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription</title>
+    <link rel="stylesheet" href="./styles/inscription-style.css">
+    <link rel="stylesheet" href="./styles/base-style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Zen+Antique&display=swap" rel="stylesheet">
+    <script>
+    </script>
+</head>
+<body>
+    <header>
+        <div id="navbar">
+
+            <a href="index.html" id="navbar-logo">Logo</a>
+
+            <div id="navlinks">
+                    <a class="navlink" href="about.html">Qui sommes-nous</a>
+                    <a class="navlink" href="contact.html">Contact</a>
+                    <a class="navlink" href="connexion.html">Connexion</a>
+                    <a id="navlink-button" href="tel:0123456789">Appelez-nous</a>
+            </div>
+
+        </div>
+    </header>
+    <main>
+
+        <div id="main-section">
+
+            <div id="main-section-text-block">
+                <h1>Inscrivez-vous</h1>
+                <p>Créez votre compte maintenant.</p>
+            </div>
+
+            <form id="inscription-form">
+
+                <div id="main-section-input-block">
+                    <div id="small-input-block">
+                        <input type="text" maxlength="30" id="prenom-inscription" class="small-inscription-input" placeholder="Prénom" required>
+                        <input type="text" maxlength="30" id="nom-inscription" class="small-inscription-input" placeholder="Nom" required>
+                    </div>
+
+                    <input type="text" maxlength="30" id="email-inscription" class="inscription-input" placeholder="Adresse mail" required>
+                    <input type="password" maxlength="30" id="password-inscription" class="inscription-input" placeholder="Mot de passe" required>
+                </div>
+
+                <div id="submit-block">
+
+                    <input type="submit" id="inscription-button" value="Inscription">
+
+                        <a href="connexion.html" id="connexion-block">
+                            Connexion
+                            <img src="images/connexion-inscription-chevron.svg" alt="Chevron vers la droite" id="chevron-svg">
+                        </a>
+
+                    </div>
+
+                </div>
+            </form>
+
+    </div>
+
+
+    </main>  
+    <footer>
+        <div id="footer-section">
+
+            <div id="footer-nav-links">
+                <a href="contact.html" class="footer-nav-link">Contact</a>
+                <a href="about.html" class="footer-nav-link">Qui sommes-nous</a>
+                <a href="reserver.html" class="footer-nav-link">Trouver un local</a>
+                <a href="connexion.html" class="footer-nav-link">Connexion</a>
+                <a href="" class="footer-nav-link">Inscription</a>
+            </div>
+
+            <div id="footer-legal">
+                <p id="footer-legal-text">2024 [Nom du Site] Tous droits réservés</p>
+
+                <div id="footer-legal-links">
+                    <a href="" class="footer-legal-link">Mentions légales</a>
+                    <a href="" class="footer-legal-link">Politique de confidentialité</a>
+                    <a href="" class="footer-legal-link">Conditions générales de vente</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+<script>
+
+// Inscription
+document.getElementById('inscription-form').addEventListener('submit', async function(event) {
+    event.preventDefault();
+    const prenom = document.getElementById('prenom-inscription').value;
+    const nom = document.getElementById('nom-inscription').value;
+    const email = document.getElementById('email-inscription').value;
+    const password = document.getElementById('password-inscription').value;
+
+    try {
+        // Envoi des données à l'API
+        const response = await fetch('/api/inscription', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                prenom: prenom,
+                nom: nom,
+                adresse_mail: email,
+                mot_de_passe: password
+            })
+        });
+
+        // réponse est bien en JSON OR NOT
+        const contentType = response.headers.get('content-type');
+        if (contentType && contentType.includes('application/json')) {
+            const data = await response.json();
+            if (response.ok) {
+                alert('Inscription réussie');
+            } else {
+                alert(data.message || 'Erreur : cet email est déjà utilisé');
+            }
+        } else {
+            alert('Erreur : La réponse du serveur n\'est pas un JSON valide.');
+        }
+
+    } catch (error) {
+        console.error('Erreur lors de l\'inscription :', error);
+        alert('Une erreur est survenue lors de l\'inscription.');
+    }
+});
+
+</script>
+</html>
