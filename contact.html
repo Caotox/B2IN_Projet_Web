@@ -4,89 +4,93 @@
         <meta charset="utf-8">
         <meta name="viewport">
         <title>Contact</title>
-        <link rel="stylesheet" href="./styles/contact.css">
+        <link rel="stylesheet" href="./styles/contact-style.css">
+        <link rel="stylesheet" href="./styles/base-style.css">
     </head>
 
     <body>
         <header>
-            <div id="logo">Logo</div>
+            <div id="navbar">
 
-            <div id="information">
-                     <a href="about.html">Qui sommes-nous ?</a>
-                     <a href="contact.html">Contact</a>
-                     <a href="connexion.html">Connexion</a>
-                     <a href="reserver.html" class="button">Réserver</a>
+                <div id="navbar-logo">
+                    Logo
+                </div>
+
+                <div id="navlinks">
+                        <a class="navlink" href="about.html">Qui sommes-nous</a>
+                        <a class="navlink" href="contact.html">Contact</a>
+                        <a class="navlink" href="connexion.html">Connexion</a>
+                        <a id="navlink-button" href="reserver.html">Trouver un local</a>
+                </div>
+
             </div>
         </header>
 
         <main>
-                <div id="contact">
-                    <img alt="PDG de la boîte" src="./images/patron.jpg">
-                </div>
 
-                <div id="renseignement">
-                    <div id="text">
+            <div id="main-section">
+
+                <img alt="Homme en costume regardant un ordinateur" src="./images/contact-page-image.jpg" id="main-section-image">
+                <div id="main-section-form-block">
+                    <div id="main-section-form-text">
                         <h1>Contactez-nous</h1>
-
                         <p>
-                            Contactez-nous pour toute demande ou devis.
-                        </p>    
+                            Contactez-nous pour toute demande ou devis.<br>Nous sommes là pour vous accompagner
+                        </p> 
+                    </div>
+
+                    <form method="POST" enctype="multipart/form-data" name="contact-form" id="main-section-form-input">
+
+                        <input name="name" type="text" required maxlength="30" placeholder="Nom" class="small-input">
                         
-                        <p>
-                             Nous sommes là pour vous accompagner
-                        </p>
-                    </div>
+                        <input name="mail" type="email" required maxlength="30" placeholder="Adresse mail" class="small-input">
+                        
+                        <textarea rows="" cols="" name="message" required maxlength="1000" placeholder="Tapez votre message..." id="big-input"></textarea>
+                        
+                        <div id="checkbox-block">
+                            <input type="checkbox" name="checkbox-legal" id="legal-checkbox" required>
+                            <p>J’accepte les CGV et la Politique de confidentialité</p>
+                        </div>
 
-                    <div id="formulaire">
+                        <input type="submit" name="button-contact" value="Envoyer le message" id="contact-button">
 
-                        <form method="get" enctype="multipart/form-data" name="formulaire" class="form">
 
-                            <input type="text" minlength="1" maxlength="100" placeholder="Votre nom...">
+                    </form>
 
-                        </form>
 
-                        <form method="get" enctype="multipart/form-data" name="formulaire" class="form">
 
-                            <input type="email" minlength="1" maxlength="30" placeholder="Votre mail...">
-                            
-                        </form>
-
-                        <textarea rows="7" cols="21" placeholder="Tapez votre message" minlength="1" maxlength="100"></textarea>
-
-                            <label class="checkbox">
-                                <input type="checkbox" required>
-                                <span> J'accepte les Conditions Générales de Vente</span>
-                            </label>
-
-                            <a href="" class="button">Envoyer le message</a>
-                    </div>
                 </div>
+                
+            </div>
 
         </main>
 
         <footer>
-            <div id="fin">
-                <a href="contact.html">Contact</a>
-                <a href="about.html">Qui sommes-nous</a>
-                <a href="reserver.html">Trouver un local</a>
-                <a href="connexion.html">Connexion</a>
-                <a href="">Inscription</a>
+            <div id="footer-section">
+
+                <div id="footer-nav-links">
+                    <a href="contact.html" class="footer-nav-link">Contact</a>
+                    <a href="about.html" class="footer-nav-link">Qui sommes-nous</a>
+                    <a href="reserver.html" class="footer-nav-link">Trouver un local</a>
+                    <a href="connexion.html" class="footer-nav-link">Connexion</a>
+                    <a href="" class="footer-nav-link">Inscription</a>
+                </div>
+
+                <div id="footer-legal">
+                    <p id="footer-legal-text">2024 [Nom du Site] Tous droits réservés</p>
+
+                    <div id="footer-legal-links">
+                        <a href="" class="footer-legal-link">Mentions légales</a>
+                        <a href="" class="footer-legal-link">Politique de confidentialité</a>
+                        <a href="" class="footer-legal-link">Conditions générales de vente</a>
+                    </div>
+
+                </div>
+
+
             </div>
 
-            <div id="trait"></div>
-
-       
-        <div id="legalite">
-            <div id="mention">
-                <p>2024 [Nom du Site] Tous droits réservés</p>
-            </div>
-
-            <div id="information_légales">
-                <a href="">Mentions légales</a>
-                <a href="">Données Personnelles</a>
-                <a href="">Conditions générales d'utilisation</a>
-            </div>
-        </div>
         </footer>
+
     </body>
 </html>

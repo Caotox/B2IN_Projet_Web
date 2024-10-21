@@ -1,0 +1,105 @@
+#main-section{
+    display: flex;
+    column-gap: 5rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+    background-color: rgba(161,190,230,0.3);
+    align-items: center;
+}
+
+#main-section-image{
+    object-fit: cover;
+    max-width: 38.5rem;
+    height: 45.875rem;
+    border-radius: 1.563rem;
+}
+
+#main-section-form-block{
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+}
+
+#main-section-form-text{
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.938rem;
+}
+
+#main-section-form-input{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 1.25rem;
+}
+
+.small-input{
+    width: 100%;
+    padding: 0.75rem;
+    background-color: white;
+    border: 0.063rem solid black;
+    border-radius: 0.625rem;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    /*font-variation-settings: "wdth" 100;*/
+    font-size: 1rem;
+    color: black;
+    line-height: 130%;
+}
+
+#big-input{
+    width: 100%;
+    height: 11.25rem;
+    padding: 0.75rem;
+    background-color: white;
+    border: 0.063rem solid black;
+    border-radius: 0.625rem;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    /*font-variation-settings: "wdth" 100;*/
+    font-size: 1rem;
+    color: black;
+    line-height: 130%;
+}
+
+#checkbox-block{
+    display: flex;
+    column-gap: 0.5rem;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+#legal-checkbox{
+    -webkit-appearance: none;
+    width: 1.125rem;
+    height: 1.125rem;
+    border-radius: 0.25rem;
+    background-color: white;
+    border: 0.063rem solid black;
+}
+
+#contact-button{
+    -webkit-appearance: none;
+    background-color: #264D80;
+    color: white;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    /*font-variation-settings: "wdth" 100;*/
+    text-decoration: none;
+    font-size: 1rem;
+    line-height: 130%;
+    border: 0.063rem solid #264D80;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    border-radius: 1.563rem;
+}

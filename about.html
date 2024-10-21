@@ -3,113 +3,118 @@
         <head lang="fr" dir="ltr">
             <meta charset="utf-8">
             <meta name="viewport">
-            <title>About Us</title>
-            <link rel="stylesheet" href="./styles/about.css">
+            <title>À propos de nous</title>
+            <link rel="stylesheet" href="./styles/about-style.css">
+            <link rel="stylesheet" href="./styles/base-style.css">
         </head>
 
         <body>
             <header>
-                <div id="logo">Logo</div>
-    
-                <div id="information">
-                    <div id="général">
-                         <a href="about.html">Qui sommes-nous ?</a>
-                         <a href="contact.html">Contact</a>
-                         <a href="connexion.html">Connexion</a>
+                <div id="navbar">
+
+                    <div id="navbar-logo">
+                        Logo
                     </div>
-                    <a href="reserver.html" class="button">Réserver</a>
+    
+                    <div id="navlinks">
+                            <a class="navlink" href="about.html">Qui sommes-nous</a>
+                            <a class="navlink" href="contact.html">Contact</a>
+                            <a class="navlink" href="connexion.html">Connexion</a>
+                            <a id="navlink-button" href="reserver.html">Trouver un local</a>
+                    </div>
+    
                 </div>
             </header>
 
             <main>
-                    <div id="us">
-                        <div id="title">
-                            <h1>Qui sommes-nous </h1>
-                        </div>
 
-                        <div id="description1">
-                            <p>Découvrez qui se cache derrière [derrière l'entreprise]</p>
-                        </div>
+                <div id="hero-section">
+                    <div id="hero-title-section">
+
+                        <h1>Qui sommes-nous </h1>
+                        <p>Découvrez qui se cache derrière [nom entreprise].</p>
+
                     </div> 
+                
+                    <img alt="Photo d'employés en pleine réflexion" src="./images/employees-picture-1.webp" id="hero-section-image">
+
+                </div>
+
+                <div id="main-section">
+
+                    <div id="main-section-sous-block">
+
+                        <h2 class="main-section-title">Notre histoire</h2>
+                        <p class="main-section-text">
+                            Fondée en 2015, notre entreprise est née de l'envie de créer des espaces uniques et fonctionnels pour des évènements d'entreprise inoubliables. Avec un engagement fort envers l'innovation et la satisfaction des clients, nous avons rapidement évolué, en passant d'un petit local à plusieurs sites prestigieux répartis dans toutes la France.
+                        </p>
+
+                        <p class="main-section-text">
+                            Aujourd'hui, nous sommes fiers de proposer des lieux qui allient modernité, confort et adaptabilité pour répondre aux besoins de chaque évènement.
+                        </p>
+
+                        <img alt="Photo d'employés en réunion" src="./images/employees-picture-2.webp" class="main-section-image">
+
+                        <h2 class="main-section-title">Une équipe soudée</h2>
+
+                        <p class="main-section-text">
+                            Notre force réside dans notre équipe dévouée et passionnée. Composée de professionels de l'évènementiel, du service client et de la gestion de lieux, notre équipe travaille main dans la main pour assurer que chaque évènement soit une réussite
+                         </p>
+
+                         <p class="main-section-text">
+                            Nous partageons une vision commune : Offrir des espaces d'exception et un service irréprochable à nos clients, tout en cultivant un esprit de collaboration et de dynamisme au sein de notre entreprise.
+                         </p>
+
+                         <img alt="Photo d'employés heureux" src="./images/employees-picture-3.webp" class="main-section-image">
+
+                    </div>
+
+                </div>
+
+                <div id="cta-section">
+                    <div id="cta-block">
+                        <div id="cta-text-block">
+
+                            <h2>Organisez votre prochain évènement</h2>
+                            <p id="cta-text">
+                                Contactez-nous dès aujourd'hui pour que nous puissions discuter de vos besoins et découvrir comment nous pouvons faire de votre évènement un véritable succès
+                            </p>
+
+                        </div>
+
+                        <a id="cta-button" href="contact.html">Nous contacter</a>
                     
-                <img alt="photo de l'équipe" src="./images/cohesion.jpg" class="image">
-
-
-                <div id="histoire">
-                    <div id="title2">
-                        <h1>Notre histoire</h1>
-                    </div>
-
-                    <div id="description2">
-                        <p>
-                            Fondée en 2015, notre entreprise est née de l'envie de créer des espaces uniques et fonctionnels pour des évènements d'entreprise inoubliables. Avec un engagement fort envers l'innovation et la satisfaction des clients, nous avons rapidement évolué , en passant d'un petit local à plusieurs sites prestigieux répartis dans toutes la France.
-                        </p>
-                    <br>
-                        <p>
-                            Aujourd'hui, nous sommes fiersde proposer des lieux qui allient modernité,confort et adaptabilité pour répondre aux besoins de chaque évènement.
-                        </p>
                     </div>
                 </div>
 
-                <img alt="une employé et un employé qui se font un check" src="./images/groupe.jpg" class="image">
-
-                <div id="equipe">
-                    <div id="title3">
-                        <h1>Une équipe soudée</h1>
-                    </div>
-
-                    <div id="description3">
-                        <p>
-                           Notre force réside dans notre équipe dévouée et passionnée. Composée de professionels e l'évènementiel , du service clientet de la gestion de lieux, notre équipe travaille main dans la mainour assurer que chaque évènementsoit une réussite
-                        </p>
-                    <br>
-                        <p>
-                           Nous partageons une vision commune : Offrir des espaces d'exception et un service irréprochable à nos clients, tout en cultivant un esprit de collaboration et de dynamisme au sein de notre entreprise.
-                        </p>
-                    </div>
-                </div>
-
-                <div id="contact">
-                    <div>
-                        <h1>Organisez votre prochain évènement</h1>
-                    </div>
-
-                    <div>
-                        <p>
-                            Contactez-nous dès aujourd'hui pour que nous puissions discuter de vos besoinset découvrir comment nous pouvons faire de votre évènement un véritable succès
-                        </p>
-                    </div>
-
-                    <div>
-                        <a class="button" href="">Réserver</a>
-                    </div>
-                </div>
             </main>
 
             <footer>
-                <div id="fin">
-                    <a href="contact.html">Contact</a>
-                    <a href="about.html">Qui sommes-nous</a>
-                    <a href="reserver.html">Trouver un local</a>
-                    <a href="connexion.html">Connexion</a>
-                    <a href="">Inscription</a>
-                </div>
+                <div id="footer-section">
     
-                <div id="trait"></div>
+                    <div id="footer-nav-links">
+                        <a href="contact.html" class="footer-nav-link">Contact</a>
+                        <a href="about.html" class="footer-nav-link">Qui sommes-nous</a>
+                        <a href="reserver.html" class="footer-nav-link">Trouver un local</a>
+                        <a href="connexion.html" class="footer-nav-link">Connexion</a>
+                        <a href="" class="footer-nav-link">Inscription</a>
+                    </div>
     
-            <div id="légalité">
-                
-                <div id="mention">
-                    <p>2024 [Nom du Site] Tous droits réservés</p>
-                </div>
+                    <div id="footer-legal">
+                        <p id="footer-legal-text">2024 [Nom du Site] Tous droits réservés</p>
     
-                <div id="information_légales">
-                    <a href="">Mentions légales</a>
-                    <a href="">Données Personnelles</a>
-                    <a href="">Conditions générales d'utilisation</a>
+                        <div id="footer-legal-links">
+                            <a href="" class="footer-legal-link">Mentions légales</a>
+                            <a href="" class="footer-legal-link">Politique de confidentialité</a>
+                            <a href="" class="footer-legal-link">Conditions générales de vente</a>
+                        </div>
+    
+                    </div>
+    
+    
                 </div>
-            </div>
     
             </footer>
+
         </body>
     </html>
