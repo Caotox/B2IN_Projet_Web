@@ -5,12 +5,13 @@ const { Pool } = require('pg');    // Client PostgreSQL
 
 const app = express();
 const pool = new Pool({
-    user: 'postgres',   // Remplacer par notre nom d'utilisateur       
-    host: 'localhost',                
-    database: 'B2IN_projet_web_bdd', // Remplacer par le nom de notre BDD
-    password: 'root ',     // Idem pour le mdp
-    port: 5432,                        
-  });
+  user: 'postgres',               // Nom d'utilisateur
+  host: 'localhost',              // Hôte
+  database: 'B2IN_projet_web_bdd', // Nom de la base de données
+  password: 'root',               // Mot de passe
+  port: 5432,                     // Port
+});
+
   
 app.use(express.json());
 

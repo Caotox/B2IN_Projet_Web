@@ -1,0 +1,24 @@
+-- Créer l'utilisateur
+CREATE USER postgres WITH PASSWORD 'root';
+
+-- Créer la base de données
+CREATE DATABASE B2IN_projet_web_bdd OWNER postgres;
+
+-- Se connecter à la base de données nouvellement créée pour exécuter des commandes supplémentaires
+\c B2IN_projet_web_bdd;
+
+-- Créer le schéma public, les commentaires et les permissions
+CREATE SCHEMA IF NOT EXISTS public AUTHORIZATION postgres;
+
+COMMENT ON SCHEMA public IS 'standard public schema';
+
+GRANT USAGE ON SCHEMA public TO PUBLIC;
+GRANT ALL ON SCHEMA public TO postgres;
+
+-- Créer la table users si elle n'existe pas déjà
+CREATE TABLE IF NOT EXISTS users(
+    prenom VARCHAR(30),
+    nom VARCHAR(30),
+    adresse_mail VARCHAR(255),
+    mot_de_passe VARCHAR(255)
+);
