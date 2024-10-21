@@ -83,7 +83,7 @@ app.get('/api/salles', async (req, res) => {
     const sallesQuery = 'SELECT * FROM salles';
     const result = await pool.query(sallesQuery);
     
-    // un header pour dire que c'est du json
+    // header pour dire que c'est du json
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(result.rows);
   } catch (error) {
