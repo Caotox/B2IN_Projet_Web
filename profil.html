@@ -2,12 +2,17 @@
 <html lang="fr" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport">
-        <title>Contact</title>
-        <link rel="stylesheet" href="./styles/contact-style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Profil</title>
+        <link rel="stylesheet" href="./styles/profil-style.css">
         <link rel="stylesheet" href="./styles/base-style.css">
-    </head>
 
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Zen+Antique&display=swap" rel="stylesheet">
+        <script>
+        </script>
+    </head>
     <body>
         <header>
             <div id="navbar">
@@ -23,46 +28,42 @@
 
             </div>
         </header>
-
         <main>
 
             <div id="main-section">
 
-                <img alt="Homme en costume regardant un ordinateur" src="./images/contact-page-image.jpg" id="main-section-image">
-                <div id="main-section-form-block">
-                    <div id="main-section-form-text">
-                        <h1>Contactez-nous</h1>
-                        <p>
-                            Contactez-nous pour toute demande ou devis.<br>Nous sommes là pour vous accompagner
-                        </p> 
-                    </div>
+                <div id="main-section-text-block">
+                    <h1>Mon profil</h1>
+                    <p>Modifiez votre profil.</p>
+                </div>
 
-                    <form method="POST" enctype="multipart/form-data" name="contact-form" id="main-section-form-input">
+                <form id="account-form">
 
-                        <input name="name" type="text" required maxlength="30" placeholder="Nom" class="small-input">
-                        
-                        <input name="mail" type="email" required maxlength="30" placeholder="Adresse mail" class="small-input">
-                        
-                        <textarea rows="" cols="" name="message" required maxlength="1000" placeholder="Tapez votre message..." id="big-input"></textarea>
-                        
-                        <div id="checkbox-block">
-                            <input type="checkbox" name="checkbox-legal" id="legal-checkbox" required>
-                            <p>J’accepte les CGV et la Politique de confidentialité</p>
+                    <div id="main-section-input-block">
+                        <div id="small-input-block">
+                            <input type="text" maxlength="30" id="prenom-account" class="small-account-input" placeholder="Prénom" required>
+                            <input type="text" maxlength="30" id="nom-account" class="small-account-input" placeholder="Nom" required>
                         </div>
 
-                        <input type="submit" name="button-contact" value="Envoyer le message" id="contact-button">
+                        <input type="text" maxlength="30" id="email-account" class="account-input" placeholder="Adresse mail" required>
+                        <input type="password" maxlength="30" id="password-account" class="account-input" placeholder="Nouveau mot de passe" required>
+                    </div>
+
+                    <div id="submit-block">
+
+                        <input type="submit" id="save-account-button" value="Enregistrer">
+
+                        <input type="submit" id="delete-account-button" value="Supprimer compte">
+
+                        </div>
+
+                    </div>
+                </form>
+
+        </div>
 
 
-                    </form>
-
-
-
-                </div>
-                
-            </div>
-
-        </main>
-
+        </main>  
         <footer>
             <div id="footer-section">
 
@@ -82,13 +83,9 @@
                         <a href="" class="footer-legal-link">Politique de confidentialité</a>
                         <a href="" class="footer-legal-link">Conditions générales de vente</a>
                     </div>
-
                 </div>
-
-
             </div>
-
         </footer>
-
     </body>
+
 </html>

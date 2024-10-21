@@ -8,6 +8,8 @@ body{
     font-weight: 800;
     font-style: normal;
     font-size: 1.5rem;
+    text-decoration: none;
+    color: black;
 }
 
 #navbar{
@@ -154,4 +156,8 @@ p{
     font-size: 1rem;
     color: black;
     line-height: 130%;
+}
+
+input[type="submit"]{
+    cursor: pointer;
 }

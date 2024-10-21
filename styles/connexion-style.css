@@ -1,0 +1,94 @@
+#main-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+    background-color: rgba(161,190,230,0.3);
+    row-gap: 4.5rem;
+}
+
+#main-section-text-block{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 0.938rem;
+}
+
+#connexion-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 2.188rem;
+    width: 25.7rem;
+}
+
+#main-section-input-block{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.25rem;
+    width: 100%;
+}
+
+.connexion-input{
+    padding: 0.75rem;
+    background-color: white;
+    border: 0.063rem solid black;
+    border-radius: 0.625rem;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    /*font-variation-settings: "wdth" 100;*/
+    font-size: 1rem;
+    color: black;
+    line-height: 130%;
+}
+
+#connexion-button{
+    -webkit-appearance: none;
+    background-color: #264D80;
+    color: white;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    /*font-variation-settings: "wdth" 100;*/
+    text-decoration: none;
+    font-size: 1rem;
+    line-height: 130%;
+    border: 0.063rem solid #264D80;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    border-radius: 1.563rem;
+}
+
+#submit-block{
+    display: flex;
+    align-items: center;
+    column-gap: 1.25rem;
+}
+
+#inscription-block{
+    display: flex;
+    align-items: center;
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    /*font-variation-settings: "wdth" 100;*/
+    text-decoration: none;
+    font-size: 1rem;
+    color: black;
+    line-height: 130%;
+}
+
+#chevron-svg{
+    width: 1.5rem;
+    height: 1.5rem;
+}
