@@ -11,17 +11,17 @@ location /monSite { alias /var/www/monSite; index index.html; }
         proxy_cache_bypass $http_upgrade;
     }
 }
-# Instructions : installer node.js, nginx, express et pg (regarder sur internet si vous ne savez pas faire)
-# Ensuite : Ouvrez le fichier /etc/nginx/nginx.conf.
-# Dans la section http, ajouter la ligne : nginx include /etc/nginx/sites-available/monSite;
-# Commenter la ligne qui inclut sites-enabled en ajoutant un # devant : nginx # include /etc/nginx/sites-enabled/*;
 
-# Ensuite : Accéder au dossier /etc/nginx/sites-available.
-# Créer un fichier nommé monSite avec le contenu suivant --> CE FICHIER
+# sudo chown -R www-data:www-data /var/www/monSite
+# sudo chmod -R 755 /var/www/monSite
 
-# Placer les fichiers HTML et CSS (comme index.html) dans le dossier /var/www/monSite.
+# sudo nano /etc/nginx/nginx.conf
+# Vérifier que user www-data; est présente
+# dans la section http, ajouter include /etc/nginx/sites-available/monSite;
+# commenter # include /etc/nginx/sites-enabled/*;
+# Faire : sudo ln -s /etc/nginx/sites-available/monSite /etc/nginx/sites-enabled/ (lien entre le fichier de configuration NGINX)
+# Redémarrer NGINX : sudo systemctl restart nginx
+# Exécuter le serveur : node server.js
+# Pour tester le site : Ouvre un navigateur et accède à : http://localhost/monSite/index.html
+# Pour l'API, utilise Postman ou accède à : http://localhost/api/
 
-# Ensuite : faire bash sudo systemctl restart nginx
-# Ensuite : faire node server.js (serveur démarré)
-# Ensuite : chercher la page : localhost:3000/index.html (ou autre, cherchez le bon)
-# Ensuite, tester avec postman 

@@ -13,6 +13,88 @@
     <script>
     </script>
 </head>
+<body>
+    <header>
+        <div id="navbar">
+
+            <div id="navbar-logo">
+                Logo
+            </div>
+
+            <div id="navlinks">
+                    <a class="navlink" href="about.html">Qui sommes-nous</a>
+                    <a class="navlink" href="contact.html">Contact</a>
+                    <a class="navlink" href="connexion.html">Connexion</a>
+                    <a id="navlink-button" href="reserver.html">Trouver un local</a>
+            </div>
+
+        </div>
+    </header>
+    <main>
+        <div id="main-section">
+
+            <div id="main-section-part-1">
+
+                <div id="part-1-text-section">
+                    <form id="connexion">
+                        <form id="connexion-form">
+                            <h1>Connexion</h1>
+                            <p>Connectez-vous pour accéder à votre compte.</p>
+                        </div>
+                            <label for="email">Adresse e-mail</label>
+                            <input type="text" id="email-connexion" required>
+                            <label for="password">Mot de passe</label>
+                            <input type="password" id="password-connexion" required>
+                            <button type="submit">Connexion</button>
+                        </form>
+
+            </div>
+
+            <div id="main-section-part-1">
+
+                <div id="part-1-text-section">
+
+                    <form id="inscription-form">
+                        <h1>Pas encore inscrit ?</h1>
+                        <p>Créez un compte pour accéder à toutes les fonctionnalités de notre site.</p>
+                    </div>
+                        <label for="prenom">Prénom</label>
+                        <input type="text" id="prenom-inscription" required>
+                        <label for="nom">Nom</label>
+                        <input type="text" id="nom-inscription" required>
+                        <label for="email">Adresse e-mail</label>
+                        <input type="text" id="email-inscription" required>
+                        <label for="password">Mot de passe</label>
+                        <input type="password" id="password-inscription" required>
+                        <button type="submit">Inscription</button>
+                    </form>
+            </div>
+
+        </div>
+    </main>  
+    <footer>
+        <div id="footer-section">
+
+            <div id="footer-nav-links">
+                <a href="contact.html" class="footer-nav-link">Contact</a>
+                <a href="about.html" class="footer-nav-link">Qui sommes-nous</a>
+                <a href="reserver.html" class="footer-nav-link">Trouver un local</a>
+                <a href="connexion.html" class="footer-nav-link">Connexion</a>
+                <a href="" class="footer-nav-link">Inscription</a>
+            </div>
+
+            <div id="footer-legal">
+                <p id="footer-legal-text">2024 [Nom du Site] Tous droits réservés</p>
+
+                <div id="footer-legal-links">
+                    <a href="" class="footer-legal-link">Mentions légales</a>
+                    <a href="" class="footer-legal-link">Politique de confidentialité</a>
+                    <a href="" class="footer-legal-link">Conditions générales de vente</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
 <script>
     // Connexion
 document.getElementById('connexion-form').addEventListener('submit', async function(event) {
@@ -70,88 +152,6 @@ document.getElementById('inscription-form').addEventListener('submit', async fun
     }
 });
 
+
 </script>
-<body>
-    <header>
-        <div id="navbar">
-
-            <div id="navbar-logo">
-                Logo
-            </div>
-
-            <div id="navlinks">
-                    <a class="navlink" href="about.html">Qui sommes-nous</a>
-                    <a class="navlink" href="contact.html">Contact</a>
-                    <a class="navlink" href="connexion.html">Connexion</a>
-                    <a id="navlink-button" href="reserver.html">Trouver un local</a>
-            </div>
-
-        </div>
-    </header>
-    <main>
-        <div id="main-section">
-
-            <div id="main-section-part-1">
-
-                <div id="part-1-text-section">
-                    <form id="connexion">
-                    <h1>Connexion</h1>
-                    <p>Connectez-vous pour accéder à votre compte.</p>
-
-                </div>
-                    <label for="email">Adresse e-mail</label>
-                    <input type="text" id="email-connexion" required>
-                    <label for="password">Mot de passe</label>
-                    <input type="password"id="password-connexion" required>
-                    <button type="submit">Connexion</button>
-
-                </form>
-
-            </div>
-
-            <div id="main-section-part-1">
-
-                <div id="part-1-text-section">
-
-                    <h1>Pas encore inscrit ?</h1>
-                    <p>Créez un compte pour accéder à toutes les fonctionnalités de notre site.</p>
-
-                </div>
-                <label for="prenom">Prénom</label>
-                <input type="text" id="prenom-inscription" required>
-                <label for="nom">Nom</label>
-                <input type="text" id="nom-inscription" required>
-                <label for="email">Adresse e-mail</label>
-                <input type="text" id="email-inscription" required>
-                <label for="password">Mot de passe</label>
-                <input type="password" id="password-inscription" required>
-                <button type="submit">Inscription</button>
-
-            </div>
-
-        </div>
-    </main>  
-    <footer>
-        <div id="footer-section">
-
-            <div id="footer-nav-links">
-                <a href="contact.html" class="footer-nav-link">Contact</a>
-                <a href="about.html" class="footer-nav-link">Qui sommes-nous</a>
-                <a href="reserver.html" class="footer-nav-link">Trouver un local</a>
-                <a href="connexion.html" class="footer-nav-link">Connexion</a>
-                <a href="" class="footer-nav-link">Inscription</a>
-            </div>
-
-            <div id="footer-legal">
-                <p id="footer-legal-text">2024 [Nom du Site] Tous droits réservés</p>
-
-                <div id="footer-legal-links">
-                    <a href="" class="footer-legal-link">Mentions légales</a>
-                    <a href="" class="footer-legal-link">Politique de confidentialité</a>
-                    <a href="" class="footer-legal-link">Conditions générales de vente</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-</body>
 </html>
