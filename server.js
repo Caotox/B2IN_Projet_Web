@@ -28,7 +28,7 @@ app.post('/api/inscription', async (req, res) => {
     }
 
     // const hashedPassword = await bcrypt.hash(mot_de_passe, 10);
-    const hashedPassword = await mot_de_passe;
+    const hashedPassword = mot_de_passe;
 
     // Insertion d'un nouvel utilisateur (méthode POST)
     const insertUserQuery = `
