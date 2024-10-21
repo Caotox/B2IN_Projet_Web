@@ -12,6 +12,12 @@ location /monSite { alias /var/www/monSite; index index.html; }
     }
 }
 
+# ncd /etc/nginx/sites-available.
+# touch monSite
+# nano monSite --> mettre ce fichier
+
+# Placer les fichiers HTML et CSS (comme index.html) dans le dossier /var/www/monSite.
+
 # sudo chown -R www-data:www-data /var/www/monSite
 # sudo chmod -R 755 /var/www/monSite
 
