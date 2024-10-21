@@ -1,53 +1,75 @@
 <!DOCTYPE html>
-<html lang="fr" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport">
-        <title>Réservation</title>
-        <link rel="stylesheet" href="./styles/confirmation.css">
-    </head>
-<!-- je vais faire la page de réservation ne vous inquiétez pas c'est temporaire cette page -->
-    <body>
-        <header>
+    <html>
+        <head lang="fr" dir="ltr">
+            <meta charset="utf-8">
+            <meta name="viewport">
+            <title>Confirmation</title>
+            <link rel="stylesheet" href="./styles/confirmation-style.css">
+            <link rel="stylesheet" href="./styles/base-style.css">
+        </head>
 
-            <div id="logo">Logo</div>
+        <body>
+            <header>
+                <div id="navbar">
 
-            <div id="information">
-                     <a href="about.html">Qui sommes-nous ?</a>
-                     <a href="contact.html">Contact</a>
-                     <a href="connexion.html">Connexion</a>
-                     <a id="navlink-button" href="tel:0123456789">Appelez-nous</a>
-            </div>
-        </header>
-        
-        <main>
-            <h2> Votre réservation a bien été prise en compte, nous vous enverrons un mail pour la confirmation. </h2>
-        </main>
+                    <a href="index.html" id="navbar-logo">Logo</a>
+    
+                    <div id="navlinks">
+                            <a class="navlink" href="about.html">Qui sommes-nous</a>
+                            <a class="navlink" href="contact.html">Contact</a>
+                            <a class="navlink" href="connexion.html">Connexion</a>
+                            <a id="navlink-button" href="tel:0123456789">Appelez-nous</a>
+                    </div>
+    
+                </div>
+            </header>
 
-        <footer>
-            <div id="fin">
-                <a href="contact.html">Contact</a>
-                <a href="about.html">Qui sommes-nous</a>
-                <a href="reserver.html">Trouver un local</a>
-                <a href="connexion.html">Connexion</a>
-                <a href="">Inscription</a>
-            </div>
+            <main>
 
-            <div id="trait"></div>
+                <div id="hero-section">
+                    <div id="confirmation-block">
+                        <div id="confirmation-text-block">
 
-       
-        <div id="legalite">
-            <div id="mention">
-                <p>2024 [Nom du Site] Tous droits réservés</p>
-            </div>
+                            <h1>Réservation effectuée</h1>
+                            <p id="confirmation-text">
+                                Vous recevrez bientôt un mail confirmant votre réservation.
+                            </p>
 
-            <div id="information_légales">
-                <a href="">Mentions légales</a>
-                <a href="">Données Personnelles</a>
-                <a href="">Conditions générales d'utilisation</a>
-            </div>
-        </div>
+                        </div>
 
-        </footer>
-    </body>
-</html>
+                        <a id="home-button" href="index.html">Retour à l'accueil</a>
+                    
+                    </div>
+                </div>
+
+            </main>
+
+            <footer>
+                <div id="footer-section">
+    
+                    <div id="footer-nav-links">
+                        <a href="contact.html" class="footer-nav-link">Contact</a>
+                        <a href="about.html" class="footer-nav-link">Qui sommes-nous</a>
+                        <a href="reserver.html" class="footer-nav-link">Trouver un local</a>
+                        <a href="connexion.html" class="footer-nav-link">Connexion</a>
+                        <a href="" class="footer-nav-link">Inscription</a>
+                    </div>
+    
+                    <div id="footer-legal">
+                        <p id="footer-legal-text">2024 [Nom du Site] Tous droits réservés</p>
+    
+                        <div id="footer-legal-links">
+                            <a href="" class="footer-legal-link">Mentions légales</a>
+                            <a href="" class="footer-legal-link">Politique de confidentialité</a>
+                            <a href="" class="footer-legal-link">Conditions générales de vente</a>
+                        </div>
+    
+                    </div>
+    
+    
+                </div>
+    
+            </footer>
+
+        </body>
+    </html>
