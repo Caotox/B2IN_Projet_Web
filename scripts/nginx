@@ -1,7 +1,15 @@
-nginx server { listen 80; server_name _;
+server {
+    listen 80;
+    server_name _;
 
-location /monSite { alias /var/www/monSite; index index.html; }
+    # Emplacement de ton site web
+    location /monSite {
+        alias /var/www/monSite/;  # Assurez-vous qu'il y a un '/' à la fin
+        index index.html;
+        try_files $uri $uri/ =404;  # Assure que les fichiers sont bien trouvés
+    }
 
+    # Redirection vers ton serveur Node.js pour l'API
     location /api/ {
         proxy_pass http://localhost:3000/;  # Redirige vers ton serveur Node.js
         proxy_http_version 1.1;
@@ -11,6 +19,7 @@ location /monSite { alias /var/www/monSite; index index.html; }
         proxy_cache_bypass $http_upgrade;
     }
 }
+
 
 # ncd /etc/nginx/sites-available.
 # touch monSite

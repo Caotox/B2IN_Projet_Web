@@ -1,77 +1,65 @@
 const express = require('express');
+const { Pool } = require('pg');
+const bcrypt = require('bcrypt'); // Si tu souhaites hacher les mots de passe
 const bodyParser = require('body-parser');
-const mysql = require('mysql2');
-const bcrypt = require('bcrypt');
-
-// Créer une connexion à la base de données
-const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'password',
-    database: 'reservation_salles'
-});
-
-db.connect(err => {
-    if (err) {
-        throw err;
-    }
-    console.log('MySQL Connected...');
-});
 
 const app = express();
+const port = 3000;
+
+// Configuration de la connexion à la base de données PostgreSQL
+const pool = new Pool({
+    user: 'postgres', // Nom d'utilisateur de PostgreSQL
+    host: 'localhost',
+    database: 'monSiteDB', // Nom de ta base de données
+    password: 'ton_mot_de_passe', // Remplace par ton mot de passe
+    port: 5432,
+});
+
 app.use(bodyParser.json());
 
-// Inscription d'un utilisateur
-app.post('/api/register', async (req, res) => {
-    const { prenom, nom, adresse_mail, mot_de_passe } = req.body;
-
-    // Vérifier si l'utilisateur existe déjà
-    const queryCheck = 'SELECT * FROM users WHERE adresse_mail = ?';
-    db.query(queryCheck, [adresse_mail], async (err, result) => {
-        if (err) throw err;
-
-        if (result.length > 0) {
-            return res.status(400).json({ message: 'Email déjà utilisé' });
-        }
-
-        // Hacher le mot de passe
+// Route d'inscription
+app.post('/api/inscription', async (req, res) => {
+    const { prenom, nom, email, mot_de_passe } = req.body;
+    try {
         const hashedPassword = await bcrypt.hash(mot_de_passe, 10);
-
-        // Insérer le nouvel utilisateur
-        const query = 'INSERT INTO users (prenom, nom, adresse_mail, mot_de_passe) VALUES (?, ?, ?, ?)';
-        db.query(query, [prenom, nom, adresse_mail, hashedPassword], (err, result) => {
-            if (err) throw err;
-            res.status(201).json({ message: 'Inscription réussie' });
-        });
-    });
+        const result = await pool.query(
+            'INSERT INTO users (prenom, nom, adresse_mail, mot_de_passe) VALUES ($1, $2, $3, $4) RETURNING *',
+            [prenom, nom, email, hashedPassword]
+        );
+        res.status(201).json({ userId: result.rows[0].id });
+    } catch (error) {
+        console.error(error);
+        res.status(400).json({ message: 'Erreur lors de l\'inscription.' });
+    }
 });
 
-// Connexion d'un utilisateur
-app.post('/api/login', (req, res) => {
-    const { adresse_mail, mot_de_passe } = req.body;
+// Route de connexion
+app.post('/api/connexion', async (req, res) => {
+    const { email, mot_de_passe } = req.body;
+    try {
+        const result = await pool.query(
+            'SELECT * FROM users WHERE adresse_mail = $1',
+            [email]
+        );
 
-    // Vérifier si l'utilisateur existe et que le mot de passe est correct
-    const query = 'SELECT * FROM users WHERE adresse_mail = ?';
-    db.query(query, [adresse_mail], async (err, result) => {
-        if (err) throw err;
-
-        if (result.length > 0) {
-            // Comparer le mot de passe avec celui stocké
-            const user = result[0];
-            const isMatch = await bcrypt.compare(mot_de_passe, user.mot_de_passe);
-
-            if (isMatch) {
-                res.json({ message: 'Connexion réussie' });
+        if (result.rows.length > 0) {
+            const user = result.rows[0];
+            const match = await bcrypt.compare(mot_de_passe, user.mot_de_passe);
+            if (match) {
+                res.status(200).json({ message: 'Connexion réussie!' });
             } else {
-                res.status(400).json({ message: 'Email ou mot de passe incorrect' });
+                res.status(401).json({ message: 'Mot de passe incorrect.' });
             }
         } else {
-            res.status(400).json({ message: 'Email ou mot de passe incorrect' });
+            res.status(404).json({ message: 'Utilisateur non trouvé.' });
         }
-    });
+    } catch (error) {
+        console.error(error);
+        res.status(400).json({ message: 'Erreur lors de la connexion.' });
+    }
 });
 
-const PORT = 3000;
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+// Démarrer le serveur
+app.listen(port, () => {
+    console.log(`Serveur démarré sur http://localhost:${port}`);
 });
