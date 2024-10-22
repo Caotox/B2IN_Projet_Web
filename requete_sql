@@ -1,17 +1,24 @@
--- Connexion à PostgreSQL avec le compte par défaut
-sudo -u postgres psql
+-- Créer l'utilisateur
+CREATE USER postgres WITH PASSWORD 'root';
 
--- Création d'une base de données
-CREATE DATABASE monSiteDB;
+-- Créer la base de données
+CREATE DATABASE B2IN_projet_web_bdd OWNER postgres;
 
--- Connexion à la base de données
-\c monSiteDB;
+-- Se connecter à la base de données nouvellement créée pour exécuter des commandes supplémentaires
+\c B2IN_projet_web_bdd;
 
--- Création de la table des utilisateurs
-CREATE TABLE users (
-    id SERIAL PRIMARY KEY,
-    prenom VARCHAR(30) NOT NULL,
-    nom VARCHAR(30) NOT NULL,
-    adresse_mail VARCHAR(255) UNIQUE NOT NULL,
-    mot_de_passe VARCHAR(255) NOT NULL
+-- Créer le schéma public, les commentaires et les permissions
+CREATE SCHEMA IF NOT EXISTS public AUTHORIZATION postgres;
+
+COMMENT ON SCHEMA public IS 'standard public schema';
+
+GRANT USAGE ON SCHEMA public TO PUBLIC;
+GRANT ALL ON SCHEMA public TO postgres;
+
+-- Créer la table users si elle n'existe pas déjà
+CREATE TABLE IF NOT EXISTS users(
+    prenom VARCHAR(30),
+    nom VARCHAR(30),
+    adresse_mail VARCHAR(255),
+    mot_de_passe VARCHAR(255)
 );
