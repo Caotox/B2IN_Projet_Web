@@ -1,0 +1,22 @@
+server {
+
+    listen 80; # Le serveur écoute sur le port 80 (HTTP)
+
+    server_name example.com; # Nom de domaine ou adresse IP du serveur
+
+    # Bloc pour servir les fichiers statiques
+    location / {
+        root /var/www/frontend; # Répertoire racine des fichiers statiques
+        index index.html; # Page d'accueil par défaut
+        try_files $uri $uri/ =404; # Si le fichier n'est pas trouvé, retourne une erreur 404
+    }
+
+    # Bloc pour faire proxy vers l'API
+    location /api/ {
+        proxy_pass http://localhost:3000/; # Adresse du serveur backend de l'API
+        proxy_set_header Host $host; # Conserver le header Host d'origine
+        proxy_set_header X-Real-IP $remote_addr; # Transmettre l'adresse IP du client
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; # Chaîne d'adresses IP de proxy
+        proxy_set_header X-Forwarded-Proto $scheme; # Indiquer si la requête est HTTP ou HTTPS
+    }
+}
