@@ -12,7 +12,10 @@ const pool = new Pool({
   port: 5432,                     
 });
 
-app.use(cors());
+
+app.use(cors({
+  origin: 'http://localhost:3000'
+}));
   
 app.use(express.json());
 
