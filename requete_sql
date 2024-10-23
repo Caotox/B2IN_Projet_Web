@@ -2,7 +2,7 @@
 CREATE USER postgres WITH PASSWORD 'root';
 
 -- Créer la base de données
-CREATE DATABASE B2IN_projet_web_bdd OWNER postgres;
+CREATE DATABASE b2in_projet_web_bdd OWNER postgres;
 
 -- Se connecter à la base de données nouvellement créée pour exécuter des commandes supplémentaires
 \c B2IN_projet_web_bdd;
