@@ -119,6 +119,7 @@ document.getElementById('inscription-form').addEventListener('submit', async fun
         const data = JSON.parse(responseText); 
         if (response.ok) {
             alert('Inscription réussie');
+            window.location.href = 'reserver.html';
         } else {
             alert(data.message || 'Erreur : cet email est déjà utilisé');
         }

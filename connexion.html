@@ -109,7 +109,7 @@ document.getElementById('connexion-form').addEventListener('submit', async funct
         const data = JSON.parse(responseText); 
         if (response.ok) {
             alert('Connexion réussie');
-            window.location.href = 'reservation.html';
+            window.location.href = 'reserver.html';
         } else {
             alert(data.message || 'Erreur : Identifiants incorrects');
         }
