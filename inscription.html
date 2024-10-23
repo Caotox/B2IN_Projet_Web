@@ -99,7 +99,7 @@ document.getElementById('inscription-form').addEventListener('submit', async fun
     const password = document.getElementById('password-inscription').value;
 
     try {
-        const response = await fetch('/api/inscription', {
+        const response = await fetch('http://localhost:3000/api/inscription', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
