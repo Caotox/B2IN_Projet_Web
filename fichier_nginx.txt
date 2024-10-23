@@ -1,0 +1,18 @@
+server {
+    listen 80;
+    server_name monsite.com; # remplacer par notre domaine 
+
+    location / {
+        root / # indiquer le chemin vers notre site
+        index index.html;
+    }
+
+    location /api/ {
+        proxy_pass http://localhost:3000; # CHANGER LE PORT
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+}

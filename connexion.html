@@ -91,7 +91,7 @@ document.getElementById('connexion-form').addEventListener('submit', async funct
     const password = document.getElementById('password-connexion').value;
 
     // Envoi des données à l'API
-    const response = await fetch('http://localhost:3000/api/connexion', {
+    const response = await fetch('/api/connexion', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -99,9 +99,7 @@ document.getElementById('connexion-form').addEventListener('submit', async funct
         body: JSON.stringify({
             adresse_mail: email,
             mot_de_passe: password
-        },
-        no
-    )
+        })
     });
 
     const data = await response.json();
