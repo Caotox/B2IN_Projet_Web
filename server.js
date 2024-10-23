@@ -7,7 +7,7 @@ const app = express();
 const pool = new Pool({
   user: 'postgres',               
   host: 'localhost',              
-  database: 'B2IN_projet_web_bdd', 
+  database: 'b2in_projet_web_bdd', 
   password: 'root',               
   port: 5432,                     
 });
