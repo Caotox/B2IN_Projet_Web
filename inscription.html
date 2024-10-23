@@ -113,10 +113,11 @@ document.getElementById('inscription-form').addEventListener('submit', async fun
             })
         });
 
-        const responseText = await response.text(); 
+        //const responseText = await response.text(); 
+        const responseText = await response.json(); 
         console.log("Réponse brute : ", responseText);
 
-        const data = JSON.parse(responseText); 
+        //const data = JSON.parse(responseText); 
         if (response.ok) {
             alert('Inscription réussie');
         } else {
