@@ -1,5 +1,5 @@
 const express = require('express');
-// const bcrypt = require('bcrypt');  
+const bcrypt = require('bcrypt');  
 const { Pool } = require('pg');
 const cors = require('cors');
 
@@ -30,8 +30,7 @@ app.post('/api/inscription', async (req, res) => {
       return res.status(400).json({ success: false, message: 'Email déjà utilisé' });
     }
 
-    // const hashedPassword = await bcrypt.hash(mot_de_passe, 10);
-    const hashedPassword = mot_de_passe;
+    const hashedPassword = await bcrypt.hash(mot_de_passe, 10);
 
 
     const insertUserQuery = `
