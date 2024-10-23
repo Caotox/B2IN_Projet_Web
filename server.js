@@ -2,8 +2,8 @@ const express = require('express');
 const bcrypt = require('bcrypt');  
 const { Pool } = require('pg');
 const cors = require('cors');
-
 const app = express();
+
 const pool = new Pool({
   user: 'postgres',               
   host: 'localhost',              
@@ -14,8 +14,9 @@ const pool = new Pool({
 
 
 app.use(cors({
-  origin: 'http://localhost:3000'
+  origin: 'http://localhost'
 }));
+
   
 app.use(express.json());
 
@@ -45,31 +46,34 @@ app.post('/api/inscription', async (req, res) => {
   }
 });
 app.post('/api/connexion', async (req, res) => {
-  console.log("Connexion!")
-    const { adresse_mail, mot_de_passe } = req.body;
-    console.log(adresse_mail);
-  
-    try {
-      const userQuery = 'SELECT * FROM users WHERE adresse_mail = $1';
-      const user = await pool.query(userQuery, [adresse_mail]);
-  
-      if (user.rows.length === 0) {
-        return res.status(400).json({ success: false, message: 'Identifiants incorrects' });
-      }
-  
-      const validPassword = (mot_de_passe === user.rows[0].mot_de_passe);
-  
-      if (!validPassword) {
-        return res.status(400).json({ success: false, message: 'Identifiants incorrects' });
-      }
-  
-      res.status(200).json({ success: true, message: 'Connexion réussie' });
-    } catch (error) {
-      console.error(error);
-      res.status(500).json({ success: false, message: 'Erreur lors de la connexion' });
-    }
-  });
+  const { adresse_mail, mot_de_passe } = req.body;
+  console.log(adresse_mail);
 
+  try {
+    const userQuery = 'SELECT * FROM users WHERE adresse_mail = $1';
+    const userResult = await pool.query(userQuery, [adresse_mail]);
+
+    if (userResult.rows.length === 0) {
+      return res.status(400).json({ success: false, message: 'Identifiants incorrects' });
+    }
+
+    const user = userResult.rows[0];
+
+    // Comparer le mot de passe haché
+    const validPassword = await bcrypt.compare(mot_de_passe, user.mot_de_passe);
+
+    if (!validPassword) {
+      return res.status(400).json({ success: false, message: 'Identifiants incorrects' });
+    }
+
+    res.status(200).json({ success: true, message: 'Connexion réussie' });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ success: false, message: 'Erreur lors de la connexion' });
+  }
+});
+
+/*
 app.get('/api/salles', async (req, res) => {
   try {
     const sallesQuery = 'SELECT * FROM salles';
@@ -102,3 +106,4 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Serveur : ${PORT}`);
 });
+*/
