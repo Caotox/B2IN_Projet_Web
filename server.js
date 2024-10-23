@@ -101,9 +101,8 @@ app.post('/api/reservation', async (req, res) => {
     res.status(500).json({ success: false, message: 'Erreur lors de la réservation' });
   }
 });
-
+*/
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Serveur : ${PORT}`);
 });
-*/
