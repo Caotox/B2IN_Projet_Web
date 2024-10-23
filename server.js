@@ -1,6 +1,7 @@
 const express = require('express');
 const bcrypt = require('bcrypt');  
-const { Pool } = require('pg');    
+const { Pool } = require('pg');
+const cors = require('cors');
 
 const app = express();
 const pool = new Pool({
@@ -11,6 +12,7 @@ const pool = new Pool({
   port: 5432,                     
 });
 
+app.use(cors());
   
 app.use(express.json());
 
@@ -40,7 +42,9 @@ app.post('/api/inscription', async (req, res) => {
   }
 });
 app.post('/api/connexion', async (req, res) => {
+  console.log("Connexion!")
     const { adresse_mail, mot_de_passe } = req.body;
+    console.log(adresse_mail);
   
     try {
       const userQuery = 'SELECT * FROM users WHERE adresse_mail = $1';
