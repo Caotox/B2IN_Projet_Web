@@ -1,5 +1,99 @@
 # B2IN_Projet_Web
 
+This project involves developing a website for a company specializing in renting event spaces for various occasions: seminars, Christmas parties, birthdays, training sessions, etc.
+
+## Key Features
+- Development and usage of a REST API in JavaScript to communicate with a PostgreSQL database.
+- Configuration and utilization of an NGINX server to meet the site's needs.
+
+---
+
+## Prerequisites
+Before starting, make sure to have the following tools installed:
+- [Node.js](https://nodejs.org/): Version 16 or later
+- [PostgreSQL](https://www.postgresql.org/): A functional database instance
+- [NGINX](https://nginx.org/): For proxy server configuration
+
+---
+
+## Main Dependencies
+The project uses the following libraries:
+- [Express](https://expressjs.com/): A web framework for Node.js
+- [bcrypt](https://github.com/kelektiv/node.bcrypt.js): A library for secure password hashing
+
+To install all dependencies, run the following command after cloning the repository:  
+```bash
+npm install
+```
+Installation and Usage Steps
+1. Clone the Repository
+Clone this repository to your local machine:
+
+```bash
+git clone https://github.com/Caotox/B2IN_Projet_Web
+```
+1.1 Create a File for the Site
+After cloning the repository, create a configuration file for your site:
+
+```bash
+sudo touch /var/www/site-available/monSite
+```
+1.2 Copy the Project Files
+Copy all project files into the newly created directory:
+
+```bash
+sudo cp -r B2IN_Projet_Web/* /var/www/site-available/monSite
+```
+2. Install Dependencies
+Once inside the project directory, run the following command to install all required dependencies:
+
+```bash
+npm install bcrypt express
+```
+3. Configure the Database
+Ensure that PostgreSQL is properly configured and accessible. Edit the configuration file (e.g., config.js) to include your database connection parameters.
+
+4. Start the Server
+Start the server using the following command:
+
+```bash
+node server.js
+```
+5. Access the Site
+Open your browser and navigate to the following address:
+http://localhost:8888/monSite/
+
+Example NGINX Configuration
+Add a configuration similar to the one below to your NGINX configuration file:
+
+```nginx
+server {
+    listen 80;
+    server_name localhost;
+
+    location / {
+        proxy_pass http://localhost:8888;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+
+    location /static/ {
+        root /path/to/your/static/files;
+    }
+}
+```
+About
+This project was developed as part of an advanced web development course, aiming to apply modern backend and frontend development concepts.
+
+
+
+
+
+# B2IN_Projet_Web
+
 Ce projet consiste à développer un site Internet pour une entreprise spécialisée dans la location de salles pour divers événements : séminaires, fêtes de Noël, anniversaires, formations, etc.
 
 ## Fonctionnalités principales
