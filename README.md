@@ -32,6 +32,19 @@ Clonez ce repository sur votre machine locale :
 ```bash
 git clone https://github.com/Caotox/B2IN_Projet_Web
 ```
+1.1 Créer un fichier pour le site  
+Après avoir cloné le dépôt, créez un fichier de configuration pour votre site :  
+```bash
+sudo touch /var/www/site-available/monSite
+```
+
+1.2 Copier les fichiers du projet
+Copiez tous les fichiers du projet dans le répertoire créé :
+
+```bash
+sudo cp -r B2IN_Projet_Web/* /var/www/site-available/monSite
+```
+
 2. Installer les dépendances
 Une fois dans le répertoire du projet, exécutez la commande suivante pour installer toutes les dépendances nécessaires :
 
