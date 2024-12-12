@@ -24,28 +24,29 @@ Le projet utilise les bibliothèques suivantes :
 Pour installer toutes les dépendances, exécutez la commande suivante après avoir cloné le dépôt :  
 ```bash
 npm install
+```
 Étapes d'installation et d'utilisation
 1. Cloner le dépôt
 Clonez ce repository sur votre machine locale :
 
-bash
-Copier le code
+```bash
 git clone https://github.com/Caotox/B2IN_Projet_Web
+```
 2. Installer les dépendances
 Une fois dans le répertoire du projet, exécutez la commande suivante pour installer toutes les dépendances nécessaires :
 
-bash
-Copier le code
-npm install
+```bash
+npm install bycrypt express
+```
 3. Configurer la base de données
 Assurez-vous que PostgreSQL est configuré et accessible. Modifiez le fichier de configuration (par exemple, config.js) pour inclure vos paramètres de connexion.
 
 4. Lancer le serveur
 Démarrez le serveur avec la commande suivante :
 
-bash
-Copier le code
+```bash
 node server.js
+```
 5. Accéder au site
 Ouvrez votre navigateur et accédez à l'adresse suivante :
 http://localhost:8888/monSite/
@@ -72,16 +73,5 @@ server {
         root /path/to/your/static/files;
     }
 }
-Structure du projet
-Voici la structure de base des fichiers du projet :
-
-csharp
-Copier le code
-B2IN_Projet_Web/
-├── server.js            # Point d'entrée principal du serveur
-├── package.json         # Fichier des dépendances
-├── config.js            # Configuration de la base de données
-├── public/              # Fichiers statiques (HTML, CSS, JS)
-└── routes/              # Routes de l'API REST
 À propos
 Ce projet a été réalisé dans le cadre d'un cours sur le développement web avancé, visant à appliquer des concepts modernes de développement backend et frontend.
