@@ -54,8 +54,7 @@ http://localhost:8888/monSite/
 Configuration NGINX (exemple)
 Ajoutez une configuration similaire à celle-ci dans votre fichier NGINX :
 
-nginx
-Copier le code
+```nginx
 server {
     listen 80;
     server_name localhost;
@@ -73,5 +72,6 @@ server {
         root /path/to/your/static/files;
     }
 }
+```
 À propos
 Ce projet a été réalisé dans le cadre d'un cours sur le développement web avancé, visant à appliquer des concepts modernes de développement backend et frontend.
